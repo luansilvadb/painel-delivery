@@ -1,13 +1,19 @@
 <template>
   <q-layout view="lhr lpr lfr">
-
-    <q-drawer style="overflow-x: hidden;" show-if-above v-model="drawer" side="left" :width="200"
-      :mini="!drawer || miniState" @click.capture="drawerClick">
+    <q-drawer
+      style="overflow-x: hidden"
+      show-if-above
+      v-model="drawer"
+      side="left"
+      :width="200"
+      :mini="!drawer || miniState"
+      @click.capture="drawerClick"
+    >
       <div class="logo-header">
         <img src="~assets/empresa-logo-vertical.svg" />
       </div>
 
-      <q-list style="opacity:90% ;">
+      <q-list style="opacity: 90%">
         <q-item v-for="item in menuItems" :key="item.label" clickable v-ripple>
           <q-item-section avatar>
             <q-icon :name="item.icon" />
@@ -26,9 +32,15 @@
     </q-drawer>
 
     <q-header reveal class="bg-white text-white">
-      <q-toolbar style="padding: 10px 0px 30px 20px;">
-        <q-input rounded type="search" style="height: 20px; width: 500px; " outlined
-          placeholder="Search by Store ID, E-mail, Keyword" dense>
+      <q-toolbar style="padding: 10px 0px 30px 20px">
+        <q-input
+          rounded
+          type="search"
+          style="height: 20px; width: 500px"
+          outlined
+          placeholder="Search by Store ID, E-mail, Keyword"
+          dense
+        >
           <template v-slot:append>
             <q-icon name="search" />
           </template>
@@ -36,7 +48,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-page-container style="background-color: #F5F5F5;">
+    <q-page-container style="background-color: #f5f5f5">
       <router-view />
     </q-page-container>
   </q-layout>
