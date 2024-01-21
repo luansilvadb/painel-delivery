@@ -13,7 +13,7 @@
         <img src="~assets/empresa-logo-vertical.svg" />
       </div>
 
-      <q-list style="opacity: 80%">
+      <q-list style="opacity: 90%">
         <q-item v-for="item in menuItems" :key="item.label" clickable v-ripple>
           <q-item-section avatar>
             <q-icon :name="item.icon" />
