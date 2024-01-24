@@ -10,7 +10,14 @@
       @click.capture="drawerClick"
     >
       <div class="logo-header">
-        <img src="~assets/empresa-logo-vertical.svg" />
+        <q-img
+          class="logo-image"
+          :src="
+            miniState
+              ? 'https://svgshare.com/i/12Bf.svg'
+              : 'https://svgshare.com/i/12E9.svg'
+          "
+        />
       </div>
 
       <q-list style="opacity: 90%">
@@ -23,10 +30,11 @@
       </q-list>
 
       <div class="drawer-footer">
-        <q-btn dense flat round @click="miniState = true">
-          <q-avatar size="14px">
-            <img src="src\assets\right-arrow.svg" />
-          </q-avatar>
+        <q-btn v-if="miniState" dense flat round @click="miniState = false">
+          <i class="material-icons">arrow_back</i>
+        </q-btn>
+        <q-btn v-else dense flat round @click="miniState = true">
+          <i class="material-icons">arrow_forward</i>
         </q-btn>
       </div>
     </q-drawer>
@@ -82,7 +90,7 @@ const menuItems = [
 
 <style scoped>
 .logo-header {
-  padding: 10px;
+  padding: 0px 0px 0px 9px;
   height: 64px;
   display: flex;
   align-items: center;
